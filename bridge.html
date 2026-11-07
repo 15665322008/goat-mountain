@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Bridge 跑酷 Bridge Run · 山羊山</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="is-play is-bridge" data-i18n-doc="docBridge">
+  <div class="play">
+    <div class="play-bg" aria-hidden="true"></div>
+    <div class="cabinet">
+      <header class="cabinet-bar">
+        <a class="back-link" href="index.html" data-i18n="backHome">← 山庄</a>
+        <h1><span data-i18n="bridgeName">Bridge 跑酷</span><small data-i18n="bridgeSmall">BRIDGE RUN</small></h1>
+        <div class="lang-switch" role="group" data-i18n-aria="langLabel" aria-label="语言">
+          <button type="button" data-lang="zh">中</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <button type="button" id="btn-sound" class="text-btn">音效开</button>
+        <button type="button" id="btn-pause" class="text-btn" data-i18n="pause">暂停</button>
+      </header>
+      <div class="stage" id="stage">
+        <canvas id="game" width="960" height="540"></canvas>
+        <div class="hud">
+          <div class="chip"><em data-i18n="hudScore">得分</em><strong id="hud-score">0</strong></div>
+          <div class="chip"><em data-i18n="hudDistance">距离</em><strong id="hud-mid">0 m</strong></div>
+          <div class="chip"><em data-i18n="hudChains">跨链</em><strong id="hud-chains">0</strong></div>
+          <div class="chip chip-wool"><em>WOOL</em><strong id="hud-wool">0</strong></div>
+        </div>
+        <div id="boost" class="boost hidden"><span data-i18n="bestRouteBanner">最佳路线 · Best Route</span><i id="boost-bar"></i></div>
+        <p class="how" id="how" data-i18n="bridgeHint">空格 / 点击跳跃 · 空中再按一次二段跳</p>
+        <div class="pad">
+          <button type="button" id="btn-jump" data-i18n="jump" data-i18n-aria="jump" aria-label="跳跃">跳</button>
+        </div>
+        <div class="veil hidden" id="veil">
+          <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dlg-title">
+            <p class="dialog-kicker" id="dlg-kicker">暂停</p>
+            <h2 id="dlg-title">桥还在</h2>
+            <p class="dialog-score" id="dlg-score">0</p>
+            <p class="dialog-sub" id="dlg-sub"></p>
+            <div class="dialog-actions">
+              <button type="button" id="btn-resume" data-i18n="resume">继续</button>
+              <button type="button" id="btn-retry">重新开始</button>
+              <a id="btn-share" class="btn-share hidden" data-i18n="shareX" target="_blank" rel="noopener noreferrer" href="https://x.com/intent/post">分享到 X</a>
+              <a class="btn-ghost" href="index.html" data-i18n="backBarn">回到山庄</a>
+            </div>
+            <p class="dialog-note" data-i18n="fanNote">同人小游戏，非 Cashmere Labs 官方。</p>
+          </div>
+        </div>
+      </div>
+      <p class="play-foot" data-i18n="bridgeFoot">粉丝同人作品，非官方。Cashmere Bridge V2 只是玩法里的一座桥。</p>
+    </div>
+  </div>
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/draw.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/bridge.js"></script>
+</body>
+</html>
